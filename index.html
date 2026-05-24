@@ -24,21 +24,21 @@
     <!-- TABS -->
     <div class="tabs">
       <button class="tab-btn active" onclick="showTab('weather', this)" id="tab-btn-weather">
-        🌤️ <span id="tabl-weather">Weather</span>
+        🌤️ <span id="tab-weather">Weather</span>
       </button>
       <button class="tab-btn" onclick="showTab('farmers', this)" id="tab-btn-farmers">
-        🌾 <span id="tabl-farmers">Farmers</span>
+        🌾 <span id="tab-farmers">Farmers</span>
       </button>
       <button class="tab-btn" onclick="showTab('others', this)" id="tab-btn-others">
-        🛒 <span id="tabl-others">Traders & Riders</span>
+        🛒 <span id="tab-others">Traders & Riders</span>
       </button>
       <button class="tab-btn" onclick="showTab('send', this)" id="tab-btn-send">
-        📲 <span id="tabl-send">Send Alert</span>
+        📲 <span id="tab-send">Send Alert</span>
       </button>
       <button class="tab-btn" 
           onclick="showTab('register', this)"
           id="tab-btn-register">
-          👤 <span id="tabl-register">Register</span>
+          👤 <span id="tab-register">Register</span>
         </button>
     </div>
 
@@ -233,59 +233,6 @@
         </div>
       </div>
     </div>
-    <!-- REGISTRATION SECTION -->
-<div id="tab-register" class="tab-page hidden">
-
-  <div class="section-title">Join Alert Community</div>
-  <p class="section-sub">
-    Register to receive daily weather alerts
-  </p>
-
-  <div class="send-card">
-
-    <!-- Show total registered users -->
-    <div class="reg-stats">
-      <div class="reg-stats-icon">👥</div>
-      <div class="reg-stats-text">
-        Join farmers, traders and riders already
-        registered across Ogbomoso land
-      </div>
-    </div>
-
-    <!-- What they get -->
-    <div class="reg-benefits">
-      <div class="benefit-item">
-        ✅ Daily weather alerts every morning
-      </div>
-      <div class="benefit-item">
-        ✅ Crop-specific advice for your LGA
-      </div>
-      <div class="benefit-item">
-        ✅ Alerts in English and Yorùbá
-      </div>
-      <div class="benefit-item">
-        ✅ Completely free — no cost ever
-      </div>
-    </div>
-
-    <!-- Register button -->
-    <a 
-      id="reg-link"
-      href="https://forms.gle/XXXXXXXXXX"
-      target="_blank"
-      class="btn btn-whatsapp"
-      style="display:block;text-align:center;
-             text-decoration:none;padding:12px;">
-      👤 Register for Free Alerts
-    </a>
-
-    <div style="text-align:center;margin-top:10px;
-                font-size:12px;color:#9ca3af;">
-      Takes less than 1 minute to register
-    </div>
-
-  </div>
-</div>
 
     <!-- =================== TAB 4: SEND ALERT =================== -->
     <div id="tab-send" class="tab-page hidden">
@@ -340,6 +287,60 @@
 
       <div class="twilio-note" id="twilio-note">
         WhatsApp opens a pre-filled message in your WhatsApp app. SMS via Twilio requires backend integration.
+      </div>
+    </div>
+
+    <!-- =================== TAB 5: REGISTRATION =================== -->
+    <div id="tab-register" class="tab-page hidden">
+
+      <div class="section-title">Join Alert Community</div>
+      <p class="section-sub">
+        Register to receive daily weather alerts
+      </p>
+
+      <div class="send-card">
+
+        <!-- Show total registered users -->
+        <div class="reg-stats">
+          <div class="reg-stats-icon">👥</div>
+          <div class="reg-stats-text">
+            Join farmers, traders and riders already
+            registered across Ogbomoso land
+          </div>
+        </div>
+
+        <!-- What they get -->
+        <div class="reg-benefits">
+          <div class="benefit-item">
+            ✅ Daily weather alerts every morning
+          </div>
+          <div class="benefit-item">
+            ✅ Crop-specific advice for your LGA
+          </div>
+          <div class="benefit-item">
+            ✅ Alerts in English and Yorùbá
+          </div>
+          <div class="benefit-item">
+            ✅ Completely free — no cost ever
+          </div>
+        </div>
+
+        <!-- Register button -->
+        <a 
+          id="reg-link"
+          href="https://forms.gle/XXXXXXXXXX"
+          target="_blank"
+          class="btn btn-whatsapp"
+          style="display:block;text-align:center;
+                 text-decoration:none;padding:12px;">
+          👤 Register for Free Alerts
+        </a>
+
+        <div style="text-align:center;margin-top:10px;
+                    font-size:12px;color:#9ca3af;">
+          Takes less than 1 minute to register
+        </div>
+
       </div>
     </div>
 

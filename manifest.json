@@ -1,0 +1,62 @@
+{
+  "name": "Ogbomoso Weather Alert",
+  "short_name": "OgbomosoWeather",
+  "description": "Real-time weather alerts for farmers, traders and okada riders in Ogbomoso land",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f0f4f8",
+  "theme_color": "#1a6b3c",
+  "orientation": "portrait",
+  "scope": "./",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["weather", "utilities", "lifestyle"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Farmer Alerts",
+      "short_name": "Farmers",
+      "description": "View crop alerts for all 5 LGAs",
+      "url": "./index.html#farmers",
+      "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Send Alert",
+      "short_name": "Send",
+      "description": "Send weather alert via WhatsApp or SMS",
+      "url": "./index.html#send",
+      "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
+    }
+  ]
+}

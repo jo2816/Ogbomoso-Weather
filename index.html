@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ogbomoso Weather Alert</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- PWA: makes it installable on Android & iOS -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1a6b3c" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="OgbomosoWeather" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-icon">🌦️</div>
+      <h1 id="app-title">Ogbomoso Weather Alert</h1>
+      <p id="app-sub">For Farmers, Traders &amp; Okada Riders</p>
+      <div class="lang-btns">
+        <button id="btn-en" class="lang-btn active" onclick="setLang('en')">English</button>
+        <button id="btn-yo" class="lang-btn" onclick="setLang('yo')">Yorùbá</button>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('weather', this)" id="tab-btn-weather">
+        🌤️ <span id="tabl-weather">Weather</span>
+      </button>
+      <button class="tab-btn" onclick="showTab('farmers', this)" id="tab-btn-farmers">
+        🌾 <span id="tabl-farmers">Farmers</span>
+      </button>
+      <button class="tab-btn" onclick="showTab('others', this)" id="tab-btn-others">
+        🛒 <span id="tabl-others">Traders & Riders</span>
+      </button>
+      <button class="tab-btn" onclick="showTab('send', this)" id="tab-btn-send">
+        📲 <span id="tabl-send">Send Alert</span>
+      </button>
+    </div>
+
+    <!-- =================== TAB 1: WEATHER =================== -->
+    <div id="tab-weather" class="tab-page">
+
+      <div class="weather-card">
+        <div class="weather-top">
+          <div>
+            <div class="big-temp" id="cur-temp">--°C</div>
+            <div class="cur-cond" id="cur-cond">Loading weather...</div>
+            <div class="cur-extra" id="cur-extra"></div>
+          </div>
+          <div class="weather-right">
+            <div class="city-name">Ogbomoso</div>
+            <div class="cur-time" id="cur-time"></div>
+          </div>
+        </div>
+        <div class="forecast-row" id="forecast-row">
+          <div class="forecast-day skeleton">--</div>
+          <div class="forecast-day skeleton">--</div>
+          <div class="forecast-day skeleton">--</div>
+          <div class="forecast-day skeleton">--</div>
+          <div class="forecast-day skeleton">--</div>
+        </div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-label" id="sl-rain">Rain chance today</div>
+          <div class="stat-val" id="sv-rain">--%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label" id="sl-wind">Wind speed</div>
+          <div class="stat-val" id="sv-wind">-- km/h</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label" id="sl-humid">Humidity</div>
+          <div class="stat-val" id="sv-humid">--%</div>
+        </div>
+      </div>
+
+      <div class="section-title" id="overview-title">Today's Alert Overview</div>
+      <div class="overview-grid">
+        <div class="overview-card">
+          <div class="ov-icon">🌾</div>
+          <div class="ov-label" id="ov1l">Farmers (5 LGAs)</div>
+          <div class="badge" id="ov1b">Checking...</div>
+        </div>
+        <div class="overview-card">
+          <div class="ov-icon">🛒</div>
+          <div class="ov-label" id="ov2l">Traders</div>
+          <div class="badge" id="ov2b">Checking...</div>
+        </div>
+        <div class="overview-card">
+          <div class="ov-icon">🏍️</div>
+          <div class="ov-label" id="ov3l">Okada Riders</div>
+          <div class="badge" id="ov3b">Checking...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================== TAB 2: FARMERS (5 LGAs) =================== -->
+    <div id="tab-farmers" class="tab-page hidden">
+      <div class="section-title" id="farmer-title">Farmer Alerts — All 5 LGAs</div>
+      <p class="section-sub" id="farmer-sub">Tap any LGA to see crop-specific advice</p>
+
+      <!-- OGBOMOSO NORTH -->
+      <div class="lga-card" onclick="toggleLGA('north')">
+        <div class="lga-header">
+          <div class="lga-left">
+            <div class="lga-name" id="lga-north-name">Ogbomoso North</div>
+            <div class="lga-hq" id="lga-north-hq">HQ: Kinnira</div>
+            <div class="lga-crops" id="lga-north-crops">Yam · Maize · Cassava · Vegetables</div>
+          </div>
+          <div class="lga-right">
+            <div class="badge" id="badge-north">Checking...</div>
+            <div class="chevron" id="chev-north">▸</div>
+          </div>
+        </div>
+        <div class="lga-body hidden" id="body-north">
+          <div class="alert-msg" id="msg-north">Loading...</div>
+        </div>
+      </div>
+
+      <!-- OGBOMOSO SOUTH -->
+      <div class="lga-card" onclick="toggleLGA('south')">
+        <div class="lga-header">
+          <div class="lga-left">
+            <div class="lga-name" id="lga-south-name">Ogbomoso South</div>
+            <div class="lga-hq" id="lga-south-hq">HQ: Arowomole</div>
+            <div class="lga-crops" id="lga-south-crops">Cocoa · Rice · Cassava · Melon</div>
+          </div>
+          <div class="lga-right">
+            <div class="badge" id="badge-south">Checking...</div>
+            <div class="chevron" id="chev-south">▸</div>
+          </div>
+        </div>
+        <div class="lga-body hidden" id="body-south">
+          <div class="alert-msg" id="msg-south">Loading...</div>
+        </div>
+      </div>
+
+      <!-- SURULERE -->
+      <div class="lga-card" onclick="toggleLGA('surulere')">
+        <div class="lga-header">
+          <div class="lga-left">
+            <div class="lga-name" id="lga-surulere-name">Surulere</div>
+            <div class="lga-hq" id="lga-surulere-hq">HQ: Iresa-Adu</div>
+            <div class="lga-crops" id="lga-surulere-crops">Maize · Cassava · Livestock</div>
+          </div>
+          <div class="lga-right">
+            <div class="badge" id="badge-surulere">Checking...</div>
+            <div class="chevron" id="chev-surulere">▸</div>
+          </div>
+        </div>
+        <div class="lga-body hidden" id="body-surulere">
+          <div class="alert-msg" id="msg-surulere">Loading...</div>
+        </div>
+      </div>
+
+      <!-- ORIIRE -->
+      <div class="lga-card" onclick="toggleLGA('oriire')">
+        <div class="lga-header">
+          <div class="lga-left">
+            <div class="lga-name" id="lga-oriire-name">Oriire</div>
+            <div class="lga-hq" id="lga-oriire-hq">HQ: Ikoyi-Ile</div>
+            <div class="lga-crops" id="lga-oriire-crops">Yam · Cassava · Maize · Livestock</div>
+          </div>
+          <div class="lga-right">
+            <div class="badge" id="badge-oriire">Checking...</div>
+            <div class="chevron" id="chev-oriire">▸</div>
+          </div>
+        </div>
+        <div class="lga-body hidden" id="body-oriire">
+          <div class="alert-msg" id="msg-oriire">Loading...</div>
+        </div>
+      </div>
+
+      <!-- OGO-OLUWA -->
+      <div class="lga-card" onclick="toggleLGA('ogooluwa')">
+        <div class="lga-header">
+          <div class="lga-left">
+            <div class="lga-name" id="lga-ogooluwa-name">Ogo-Oluwa</div>
+            <div class="lga-hq" id="lga-ogooluwa-hq">HQ: Ajaawa</div>
+            <div class="lga-crops" id="lga-ogooluwa-crops">Soybeans · Pineapple · Cassava · Kola nut</div>
+          </div>
+          <div class="lga-right">
+            <div class="badge" id="badge-ogooluwa">Checking...</div>
+            <div class="chevron" id="chev-ogooluwa">▸</div>
+          </div>
+        </div>
+        <div class="lga-body hidden" id="body-ogooluwa">
+          <div class="alert-msg" id="msg-ogooluwa">Loading...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================== TAB 3: TRADERS & RIDERS =================== -->
+    <div id="tab-others" class="tab-page hidden">
+
+      <div class="section-title" id="traders-title">Traders Alert</div>
+      <div class="group-card traders-card">
+        <div class="group-top">
+          <div class="group-icon-big">🛒</div>
+          <div>
+            <div class="group-name" id="traders-name">Traders — Sabo &amp; Isale-Ora Markets</div>
+            <div class="badge" id="badge-traders">Checking...</div>
+          </div>
+        </div>
+        <div class="alert-msg" id="msg-traders">Loading weather data...</div>
+      </div>
+
+      <div class="section-title" id="riders-title">Okada &amp; Tricycle Riders Alert</div>
+      <div class="group-card riders-card">
+        <div class="group-top">
+          <div class="group-icon-big">🏍️</div>
+          <div>
+            <div class="group-name" id="riders-name">Okada &amp; Tricycle Riders — All Routes</div>
+            <div class="badge" id="badge-riders">Checking...</div>
+          </div>
+        </div>
+        <div class="alert-msg" id="msg-riders">Loading weather data...</div>
+      </div>
+
+      <!-- WIND WARNING (shows when wind is high) -->
+      <div class="wind-warning hidden" id="wind-warning">
+        <div class="wind-icon">💨</div>
+        <div>
+          <div class="wind-title" id="wind-title">Wind Warning — All Groups</div>
+          <div class="alert-msg" id="msg-wind"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================== TAB 4: SEND ALERT =================== -->
+    <div id="tab-send" class="tab-page hidden">
+      <div class="section-title" id="send-title">Send Weather Alert</div>
+
+      <div class="send-card">
+        <div class="form-group">
+          <label id="fl-group">Select who to alert</label>
+          <select id="sel-group" onchange="updatePreview()">
+            <option value="north">Farmers — Ogbomoso North (Yam, Maize, Cassava)</option>
+            <option value="south">Farmers — Ogbomoso South (Cocoa, Rice, Melon)</option>
+            <option value="surulere">Farmers — Surulere (Maize, Cassava)</option>
+            <option value="oriire">Farmers — Oriire (Yam, Cassava)</option>
+            <option value="ogooluwa">Farmers — Ogo-Oluwa (Soybeans, Pineapple)</option>
+            <option value="traders">Traders — Sabo &amp; Isale-Ora Markets</option>
+            <option value="riders">Okada &amp; Tricycle Riders</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label id="fl-phone">Phone number (with country code)</label>
+          <input type="tel" id="inp-phone" placeholder="+2348012345678" />
+        </div>
+
+        <div class="form-group">
+          <label id="fl-lang">Message language</label>
+          <select id="sel-msglang" onchange="updatePreview()">
+            <option value="en">English</option>
+            <option value="yo">Yorùbá</option>
+            <option value="both">Both (English + Yorùbá)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label id="fl-preview">Message preview</label>
+          <div class="preview-box" id="msg-preview">Loading weather data...</div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-whatsapp" onclick="sendWhatsApp()">
+            📲 <span id="btn-wa">Send via WhatsApp</span>
+          </button>
+          <button class="btn btn-sms" onclick="sendSMS()">
+            💬 <span id="btn-sms">Send SMS</span>
+          </button>
+        </div>
+
+        <div class="sent-notice hidden" id="sent-notice">
+          ✅ <span id="sent-text">Alert sent!</span>
+        </div>
+      </div>
+
+      <div class="twilio-note" id="twilio-note">
+        WhatsApp opens a pre-filled message in your WhatsApp app. SMS via Twilio requires backend integration.
+      </div>
+    </div>
+
+  </div><!-- end .app -->
+
+  <script src="script.js"></script>
+
+  <!-- Register Service Worker for PWA / offline support -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(reg => console.log('Service Worker registered:', reg.scope))
+          .catch(err => console.log('Service Worker failed:', err));
+      });
+    }
+  </script>
+
+</body>
+</html>

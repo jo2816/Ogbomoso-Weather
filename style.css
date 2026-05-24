@@ -1,0 +1,512 @@
+/* ===== RESET & BASE ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ===== APP WRAPPER ===== */
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 0 2rem 0;
+  background: #f0f4f8;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: linear-gradient(135deg, #1a6b3c 0%, #2d9e5f 100%);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+}
+
+.header-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.header p {
+  font-size: 13px;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+.lang-btns {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.lang-btn {
+  padding: 5px 18px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.lang-btn.active {
+  background: #fff;
+  color: #1a6b3c;
+  border-color: #fff;
+}
+
+/* ===== TABS ===== */
+.tabs {
+  display: flex;
+  background: #fff;
+  border-bottom: 2px solid #e8f0eb;
+  overflow-x: auto;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tabs::-webkit-scrollbar { display: none; }
+
+.tab-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 10px 6px;
+  border: none;
+  background: none;
+  font-size: 11px;
+  color: #6b7280;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.tab-btn.active {
+  color: #1a6b3c;
+  border-bottom-color: #1a6b3c;
+  font-weight: 700;
+}
+
+/* ===== TAB PAGES ===== */
+.tab-page {
+  padding: 1rem;
+  display: block;
+}
+
+.tab-page.hidden {
+  display: none;
+}
+
+/* ===== WEATHER CARD ===== */
+.weather-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.25rem;
+  margin-bottom: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.weather-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.big-temp {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1a1a2e;
+  line-height: 1;
+}
+
+.cur-cond {
+  font-size: 14px;
+  color: #4b5563;
+  margin-top: 4px;
+}
+
+.cur-extra {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.weather-right {
+  text-align: right;
+}
+
+.city-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a6b3c;
+}
+
+.cur-time {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+/* ===== FORECAST ROW ===== */
+.forecast-row {
+  display: flex;
+  gap: 6px;
+}
+
+.forecast-day {
+  flex: 1;
+  text-align: center;
+  background: #f8faf9;
+  border-radius: 10px;
+  padding: 8px 4px;
+  font-size: 11px;
+  border: 1px solid #e8f0eb;
+}
+
+.forecast-day .f-day { color: #6b7280; font-weight: 600; }
+.forecast-day .f-temp { font-size: 13px; font-weight: 700; color: #1a1a2e; margin: 3px 0; }
+.forecast-day .f-rain { font-size: 11px; }
+.rain-low { color: #16a34a; }
+.rain-mid { color: #d97706; }
+.rain-high { color: #dc2626; }
+
+.skeleton { color: #d1d5db; background: #f3f4f6; }
+
+/* ===== STAT CARDS ===== */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 10px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+}
+
+.stat-val {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1a6b3c;
+}
+
+/* ===== OVERVIEW GRID (Tab 1) ===== */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.overview-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.ov-icon { font-size: 22px; margin-bottom: 6px; }
+
+.ov-label {
+  font-size: 11px;
+  color: #4b5563;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+/* ===== BADGES ===== */
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.badge.safe { background: #dcfce7; color: #15803d; }
+.badge.warn { background: #fef9c3; color: #92400e; }
+.badge.danger { background: #fee2e2; color: #991b1b; }
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.section-sub {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 12px;
+}
+
+/* ===== LGA CARDS (Farmers tab) ===== */
+.lga-card {
+  background: #fff;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.lga-card:hover {
+  border-color: #1a6b3c;
+}
+
+.lga-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.1rem;
+}
+
+.lga-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.lga-hq {
+  font-size: 11px;
+  color: #9ca3af;
+  margin: 2px 0;
+}
+
+.lga-crops {
+  font-size: 11px;
+  color: #1a6b3c;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.lga-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.chevron {
+  font-size: 14px;
+  color: #9ca3af;
+  transition: transform 0.2s;
+}
+
+.chevron.open {
+  transform: rotate(90deg);
+}
+
+.lga-body {
+  padding: 0 1.1rem 1rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.lga-body.hidden {
+  display: none;
+}
+
+/* ===== ALERT MESSAGE ===== */
+.alert-msg {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.7;
+  padding-top: 10px;
+}
+
+/* ===== GROUP CARDS (Traders & Riders tab) ===== */
+.group-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.1rem;
+  margin-bottom: 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.group-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.group-icon-big { font-size: 28px; }
+
+.group-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+/* ===== WIND WARNING ===== */
+.wind-warning {
+  background: #fff7ed;
+  border: 1.5px solid #fed7aa;
+  border-radius: 14px;
+  padding: 1rem;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.wind-warning.hidden { display: none; }
+
+.wind-icon { font-size: 26px; }
+
+.wind-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 4px;
+}
+
+/* ===== SEND CARD ===== */
+.send-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.25rem;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  font-size: 13px;
+  color: #1a1a2e;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #1a6b3c;
+}
+
+.preview-box {
+  background: #f8faf9;
+  border: 1.5px solid #d1fae5;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 12px;
+  color: #374151;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  min-height: 80px;
+}
+
+/* ===== BUTTONS ===== */
+.btn-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn {
+  flex: 1;
+  padding: 11px 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.btn-sms {
+  background: #1a6b3c;
+  color: #fff;
+}
+
+.btn:hover { opacity: 0.9; }
+
+/* ===== SENT NOTICE ===== */
+.sent-notice {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #15803d;
+  text-align: center;
+  padding: 8px;
+  background: #dcfce7;
+  border-radius: 8px;
+}
+
+.sent-notice.hidden { display: none; }
+
+/* ===== TWILIO NOTE ===== */
+.twilio-note {
+  font-size: 11px;
+  color: #9ca3af;
+  text-align: center;
+  padding: 0 1rem;
+  line-height: 1.5;
+}
+
+/* ===== RESPONSIVE — very small screens ===== */
+@media (max-width: 360px) {
+  .overview-grid { grid-template-columns: repeat(3, 1fr); }
+  .stat-row { grid-template-columns: repeat(3, 1fr); }
+  .big-temp { font-size: 34px; }
+}

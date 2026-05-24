@@ -13,10 +13,10 @@ const T = {
   en: {
     appTitle:      'Ogbomoso Weather Alert',
     appSub:        'For Farmers, Traders & Okada Riders',
-    tablWeather:   'Weather',
-    tablFarmers:   'Farmers',
-    tablOthers:    'Traders & Riders',
-    tablSend:      'Send Alert',
+    tabWeather:   'Weather',
+    tabFarmers:   'Farmers',
+    tabOthers:    'Traders & Riders',
+    tabSend:      'Send Alert',
     slRain:        'Rain chance today',
     slWind:        'Wind speed',
     slHumid:       'Humidity',
@@ -67,10 +67,10 @@ const T = {
   yo: {
     appTitle:      'Ètò Ìkìlọ Ojú Ọjọ́ Ogbomoso',
     appSub:        'Fún Àwọn Àgbẹ̀, Oníṣòwò àti Okada',
-    tablWeather:   'Ojú Ọjọ́',
-    tablFarmers:   'Àwọn Àgbẹ̀',
-    tablOthers:    'Oníṣòwò & Okada',
-    tablSend:      'Firanṣẹ́',
+    tabWeather:   'Ojú Ọjọ́',
+    tabFarmers:   'Àwọn Àgbẹ̀',
+    tabOthers:    'Oníṣòwò & Okada',
+    tabSend:      'Firanṣẹ́',
     slRain:        'Ìṣeéṣe òjò lónìí',
     slWind:        'Ìyára afẹ́fẹ́',
     slHumid:       'Ọ̀rọ̀ omi afẹ́fẹ́',
@@ -236,13 +236,13 @@ const lgaData = {
     warnAt: 50, dangerAt: 70,
     msgs: {
       en: {
-        danger: '⚠️ HIGH RAIN RISK ({rain}%)! For your yam mounds — cover them NOW to prevent flooding and root rot. Avoid planting maize today. Check that cassava farms have good drainage. Do not leave vegetables exposed.',
-        warn:   '⚡ Moderate rain possible ({rain}%). Monitor your yam mounds for waterlogging. Hold off on planting new maize until rain passes. Cassava is generally fine — just check drainage.',
+        danger: '⚠️ HIGH RAIN RISK ({rain}%)! For your yam mounds — cover them NOW to prevent flooding and root rot. Avoid planting maize today. Check that cassava farms have good drainage.[...]',
+        warn:   '⚡ Moderate rain possible ({rain}%). Monitor your yam mounds for waterlogging. Hold off on planting new maize until rain passes. Cassava is generally fine — just check drainage[...]',
         safe:   '✅ Good farming day ({rain}% rain chance). Safe to tend yam, plant maize, and harvest cassava. Vegetables can be watered lightly — natural rain unlikely.',
       },
       yo: {
-        danger: '⚠️ EWUU! Ìṣeéṣe òjò ga ({rain}%)! Bò àwọn isu rẹ kíákíá kí omi má wọ inú. Má gbìn àgbàdo lónìí. Ṣàyẹ̀wò àwọn oko ẹ̀gẹ rẹ kí omi ṣàn jáde dáadáa. Má fi ewébẹ̀ sílẹ̀ láìbò.',
-        warn:   '⚡ Ìṣeéṣe òjò dede ({rain}%). Ṣọ́ra fún àwọn isu rẹ. Dúró tí òjò bá ti parí kí o tó gbìn àgbàdo. Ẹ̀gẹ dára — ṣàyẹ̀wò ìṣàn omi.',
+        danger: '⚠️ EWUU! Ìṣeéṣe òjò ga ({rain}%)! Bò àwọn isu rẹ kíákíá kí omi má wọ inú. Má gbìn àgbàdo lónìí. Ṣàyẹ̀wò àwọn oko ẹ̀gẹ rẹ kí om[...]',
+        warn:   '⚡ Ìṣeéṣe òjò dede ({rain}%). Ṣọ́ra fún àwọn isu rẹ. Dúró tí òjò bá ti parí kí o tó gbìn àgbàdo. Ẹ̀gẹ dára — ṣàyẹ̀wò ìṣàn omi.[...]',
         safe:   '✅ Ọjọ́ rere fún oko ({rain}% ìṣeéṣe òjò). O lè tọ́jú isu, gbìn àgbàdo, àti kórè ẹ̀gẹ. Ojú ọjọ́ dára fún gbogbo ewébẹ̀.',
       }
     }
@@ -251,12 +251,12 @@ const lgaData = {
     warnAt: 50, dangerAt: 70,
     msgs: {
       en: {
-        danger: '⚠️ HIGH RAIN RISK ({rain}%)! Cocoa pods are at risk — excess moisture causes black pod disease. Cover harvested cocoa immediately. Check rice paddies for flooding risk. Protect melon from rot — harvest any ready melon today. Move cassava produce indoors.',
+        danger: '⚠️ HIGH RAIN RISK ({rain}%)! Cocoa pods are at risk — excess moisture causes black pod disease. Cover harvested cocoa immediately. Check rice paddies for flooding risk. Pro[...]',
         warn:   '⚡ Rain possible ({rain}%). Watch cocoa pods for signs of moisture damage. Rice paddies may get extra water — beneficial but monitor. Keep harvested melon dry.',
         safe:   '✅ Great day for your farms ({rain}% rain chance). Ideal for tending cocoa, harvesting melon, and transplanting rice seedlings. Dry conditions good for cassava processing.',
       },
       yo: {
-        danger: '⚠️ EWUU! Ìṣeéṣe òjò ga ({rain}%)! Àwọn ọ̀bẹ cocoa wà nínú ewu — omi púpọ̀ máa ń fa àrùn. Bò wọn kíákíá. Ṣàyẹ̀wò oko iresi fún ewu omi. Kórè ẹ̀gúṣí tó ti pé lónìí.',
+        danger: '⚠️ EWUU! Ìṣeéṣe òjò ga ({rain}%)! Àwọn ọ̀bẹ cocoa wà nínú ewu — omi púpọ̀ máa ń fa àrùn. Bò wọn kíákíá. Ṣàyẹ̀wò oko iresi fún ewu [...]',
         warn:   '⚡ Ìṣeéṣe òjò wa ({rain}%). Ṣọ́ra fún cocoa rẹ. Oko iresi lè gbádùn omi díẹ̀. Jẹ́ kí ẹ̀gúṣí tó ti kórè gbẹ.',
         safe:   '✅ Ọjọ́ rere fún oko ({rain}% ìṣeéṣe òjò). O lè tọ́jú cocoa, kórè ẹ̀gúṣí, àti gbìn iresi. Ojú ọjọ́ dára fún lílu ẹ̀gẹ.',
       }
@@ -266,12 +266,12 @@ const lgaData = {
     warnAt: 45, dangerAt: 65,
     msgs: {
       en: {
-        danger: '⚠️ HIGH RAIN RISK ({rain}%)! Strong wind + rain can lodge (flatten) your maize — stake tall plants now. Delay any maize harvesting until after rain. Cover stored cassava from moisture. Secure your livestock — keep them sheltered.',
+        danger: '⚠️ HIGH RAIN RISK ({rain}%)! Strong wind + rain can lodge (flatten) your maize — stake tall plants now. Delay any maize harvesting until after rain. Cover stored cassava fr[...]',
         warn:   '⚡ Rain possible ({rain}%). Stake any maize plants over 1m tall to prevent lodging. Check that livestock are comfortable. Cassava stores should be kept dry.',
-        safe:   '✅ Good farming day in Surulere ({rain}% rain chance). Excellent conditions for maize growth — sunshine good for pollination. Safe for cassava harvesting and livestock grazing.',
+        safe:   '✅ Good farming day in Surulere ({rain}% rain chance). Excellent conditions for maize growth — sunshine good for pollination. Safe for cassava harvesting and livestock grazing[...]',
       },
       yo: {
-        danger: '⚠️ EWUU! Ìṣeéṣe òjò ga ({rain}%)! Afẹ́fẹ́ àti òjò lè mú àgbàdo rẹ dọ̀wọ́n. Dè àwọn ohun tó ga mọ́ igi. Má kórè àgbàdo lónìí. Bò ẹ̀gẹ tí a ti kórè. Tọ́jú ẹran rẹ sínú àgọ́.',
+        danger: '⚠️ EWUU! Ìṣeéṣe òjò ga ({rain}%)! Afẹ́fẹ́ àti òjò lè mú àgbàdo rẹ dọ̀wọ́n. Dè àwọn ohun tó ga mọ́ igi. Má kórè àgbàdo lónìí. Bò [...]',
         warn:   '⚡ Ìṣeéṣe òjò dede ({rain}%). Dè àgbàdo tó ga. Ṣọ́ra fún àwọn ẹran rẹ. Jẹ́ kí ibi tí a ti pamọ́ ẹ̀gẹ gbẹ.',
         safe:   '✅ Ọjọ́ rere fún Surulere ({rain}% ìṣeéṣe òjò). Ó dára fún àgbàdo — oòrùn ń ṣe àárọ̀ rere. Kórè ẹ̀gẹ àti jẹ kí ẹran lọ jẹun.',
       }
@@ -281,14 +281,14 @@ const lgaData = {
     warnAt: 50, dangerAt: 70,
     msgs: {
       en: {
-        danger: '⚠️ HIGH RAIN RISK ({rain}%)! Do NOT harvest cassava today — wet soil makes tubers absorb water and rot faster in storage. Cover yam mounds to prevent flooding. Secure livestock in Ikoyi-Ile and surrounding villages. Delay maize harvesting.',
+        danger: '⚠️ HIGH RAIN RISK ({rain}%)! Do NOT harvest cassava today — wet soil makes tubers absorb water and rot faster in storage. Cover yam mounds to prevent flooding. Secure lives[...]',
         warn:   '⚡ Rain possible ({rain}%). Hold off cassava harvesting if soil is already wet. Check yam mounds. Livestock should be kept close to shelter.',
-        safe:   '✅ Good day for Oriire farms ({rain}% rain chance). Perfect for cassava harvesting — dry soil makes tubers easy to pull and store well. Good day to tend yam and graze livestock.',
+        safe:   '✅ Good day for Oriire farms ({rain}% rain chance). Perfect for cassava harvesting — dry soil makes tubers easy to pull and store well. Good day to tend yam and graze livestoc[...]',
       },
       yo: {
-        danger: '⚠️ EWUU! Ìṣeéṣe òjò ga ({rain}%)! MÁ kórè ẹ̀gẹ lónìí — ilẹ̀ tó rọ̀ máa ń jẹ kí ẹ̀gẹ jẹ́ kíákíá. Bò àwọn isu. Tọ́jú ẹran sínú àgọ́ ní Ikoyi-Ile.',
+        danger: '⚠️ EWUU! Ìṣeéṣe òjò ga ({rain}%)! MÁ kórè ẹ̀gẹ lónìí — ilẹ̀ tó rọ̀ máa ń jẹ kí ẹ̀gẹ jẹ́ kíákíá. Bò àwọn isu. Tọ́jú ẹran[...]',
         warn:   '⚡ Ìṣeéṣe òjò wa ({rain}%). Má yára kórè ẹ̀gẹ bí ilẹ̀ bá ti rọ̀. Ṣàyẹ̀wò isu. Jẹ́ kí ẹran wà nítòsí àgọ́.',
-        safe:   '✅ Ọjọ́ rere fún Oriire ({rain}% ìṣeéṣe òjò). Àkókò rere láti kórè ẹ̀gẹ — ilẹ̀ gbẹ máa ń jẹ kí ẹ̀gẹ tọ́ dáadáa. Ó dára fún isu àti jẹ kí ẹran lọ jẹun.',
+        safe:   '✅ Ọjọ́ rere fún Oriire ({rain}% ìṣeéṣe òjò). Àkókò rere láti kórè ẹ̀gẹ — ilẹ̀ gbẹ máa ń jẹ kí ẹ̀gẹ tọ́ dáadáa. Ó dára fún isu [...]',
       }
     }
   },
@@ -296,14 +296,14 @@ const lgaData = {
     warnAt: 45, dangerAt: 65,
     msgs: {
       en: {
-        danger: '⚠️ HIGH RAIN RISK ({rain}%)! Soybeans left in the field can sprout or rot in heavy rain — harvest immediately if beans are ready. Move drying soybeans under cover NOW. Pineapple is fine in rain but check for flooding around plant bases. Kola nut trees are resilient — just avoid harvesting today.',
+        danger: '⚠️ HIGH RAIN RISK ({rain}%)! Soybeans left in the field can sprout or rot in heavy rain — harvest immediately if beans are ready. Move drying soybeans under cover NOW. Pine[...]',
         warn:   '⚡ Rain possible ({rain}%). If soybeans are drying outdoors, bring them inside. Pineapple and kola nut farms are low risk. Cassava is fine.',
-        safe:   '✅ Great farming day in Ogo-Oluwa ({rain}% rain chance). Ideal for soybean drying outdoors. Pineapple harvest conditions are good. Kola nut collection and cassava work can proceed normally.',
+        safe:   '✅ Great farming day in Ogo-Oluwa ({rain}% rain chance). Ideal for soybean drying outdoors. Pineapple harvest conditions are good. Kola nut collection and cassava work can proce[...]',
       },
       yo: {
-        danger: '⚠️ EWUU! Ìṣeéṣe òjò ga ({rain}%)! Soybeans tó wà níta lè hù tàbí jẹ́ nínú òjò — kórè wọn kíákíá bí wọ́n bá ti pé. Mú soybeans tí a ń gbẹ wọlé KÍÁKÍÁ. Ọ̀pẹ̀ olómi dára nínú òjò ṣùgbọ́n ṣọ́ra fún omi. Orógbó lágbára — má kórè lónìí.',
+        danger: '⚠️ EWUU! Ìṣeéṣe òjò ga ({rain}%)! Soybeans tó wà níta lè hù tàbí jẹ́ nínú òjò — kórè wọn kíákíá bí wọ́n bá ti pé. Mú soybeans tí a ń [...]',
         warn:   '⚡ Ìṣeéṣe òjò wa ({rain}%). Bí soybeans rẹ bá wà níta, mú wọ wọlé. Ọ̀pẹ̀ olómi àti orógbó kò wà nínú ewu pupọ. Ẹ̀gẹ dára.',
-        safe:   '✅ Ọjọ́ rere fún Ogo-Oluwa ({rain}% ìṣeéṣe òjò). Àkókò rere láti gbẹ soybeans níta. Kórè ọ̀pẹ̀ olómi. Kórè orógbó àti ẹ̀gẹ lè bẹ̀rẹ̀ lásán.',
+        safe:   '✅ Ọjọ́ rere fún Ogo-Oluwa ({rain}% ìṣeéṣe òjò). Àkókò rere láti gbẹ soybeans níta. Kórè ọ̀pẹ̀ olómi. Kórè orógbó àti ẹ̀gẹ lè bẹ̀rẹ[...]',
       }
     }
   }
@@ -349,8 +349,8 @@ function renderOtherAlerts(data) {
   let traderMsg;
   if (rain >= 65) {
     traderMsg = l === 'yo'
-      ? `⚠️ Ìṣeéṣe òjò ga (${rain}%)! Mú àwọ̀ àbò wá ọjà Sabo àti Isale-Ora. Pèsè àwọn ọjà tó le jẹ́ bí omi bá bú. Pèsè ibi tí àwọn oníra lè dúró nígbà òjò.`
-      : `⚠️ HIGH RAIN RISK (${rain}%)! Bring a canopy or tarpaulin to Sabo and Isale-Ora markets. Pack moisture-sensitive goods (fabrics, electronics, foodstuff) securely. Set up shelter for customers.`;
+      ? `⚠️ Ìṣeéṣe òjò ga (${rain}%)! Mú àwọ̀ àbò wá ọjà Sabo àti Isale-Ora. Pèsè àwọn ọjà tó le jẹ́ bí omi bá bú. Pèsè ibi tí àwọn oníra lè dúró [...]`
+      : `⚠️ HIGH RAIN RISK (${rain}%)! Bring a canopy or tarpaulin to Sabo and Isale-Ora markets. Pack moisture-sensitive goods (fabrics, electronics, foodstuff) securely. Set up shelter for [...]`;
   } else if (rain >= 40) {
     traderMsg = l === 'yo'
       ? `⚡ Ìṣeéṣe òjò wa (${rain}%). Mú àwọ̀ àbò kan kí o bá ṣetan. Ọjà àárọ̀ yóò dára — ṣọ́ra lóòsán.`
@@ -367,8 +367,8 @@ function renderOtherAlerts(data) {
   let riderMsg;
   if (rain >= 55) {
     riderMsg = l === 'yo'
-      ? `⚠️ Ìṣeéṣe òjò ga (${rain}%)! Mú ẹ̀wù omi. Dín ìyára rẹ lulẹ̀ lójú ọnà tó rọ̀ — pàápàá nítòsí Ogbomoso North bridge. Ṣọ́ra fún àwọn ihò ọnà tó máa ń rọ sínú òjò. Mọ àwọn alábàárà rẹ nípa ìdádúró.`
-      : `⚠️ HIGH RAIN RISK (${rain}%)! Carry a raincoat before leaving home. Reduce speed on wet roads — especially near Ogbomoso North bridge and market areas. Watch for potholes hidden by rainwater. Alert your passengers about possible delays.`;
+      ? `⚠️ Ìṣeéṣe òjò ga (${rain}%)! Mú ẹ̀wù omi. Dín ìyára rẹ lulẹ̀ lójú ọnà tó rọ̀ — pàápàá nítòsí Ogbomoso North bridge. Ṣọ́ra fún àwọn ih[...]`
+      : `⚠️ HIGH RAIN RISK (${rain}%)! Carry a raincoat before leaving home. Reduce speed on wet roads — especially near Ogbomoso North bridge and market areas. Watch for potholes hidden by[...]`;
   } else if (rain >= 30) {
     riderMsg = l === 'yo'
       ? `⚡ Ìṣeéṣe òjò wa (${rain}%). Mú ẹ̀wù omi kí ó bá rọ̀ lójijì. Ṣọ́ra lójú ọnà jẹ́ kí afẹ́fẹ́ má mú ọ dọ̀wọ́n.`
@@ -386,8 +386,8 @@ function renderOtherAlerts(data) {
     windEl.classList.remove('hidden');
     document.getElementById('wind-title').textContent = T[l].windTitle;
     document.getElementById('msg-wind').textContent = l === 'yo'
-      ? `Afẹ́fẹ́ lagbara (${wind} km/h). Àwọn okada, ṣọ́ra jùlọ — afẹ́fẹ́ lágbára lè mú ọ wọ̀. Àwọn oníṣòwò, dè àwọn àwọ̀ àbò àti ọjà rẹ mọ́ dáadáa.`
-      : `Strong winds detected (${wind} km/h). Okada riders — extra caution, strong gusts can be dangerous. Traders — secure your canopies and lightweight goods. Farmers — support tall crops.`;
+      ? `Afẹ́fẹ́ lagbara (${wind} km/h). Àwọn okada, ṣọ́ra jùlọ — afẹ́fẹ́ lágbára lè mú ọ wọ̀. Àwọn oníṣòwò, dè àwọn àwọ̀ àbò àti ọjà rẹ [...]`
+      : `Strong winds detected (${wind} km/h). Okada riders — extra caution, strong gusts can be dangerous. Traders — secure your canopies and lightweight goods. Farmers — support tall crop[...]`;
   } else {
     windEl.classList.add('hidden');
   }
@@ -538,10 +538,10 @@ function setLang(lang) {
   const map = {
     'app-title':      'appTitle',
     'app-sub':        'appSub',
-    'tabl-weather':   'tablWeather',
-    'tabl-farmers':   'tablFarmers',
-    'tabl-others':    'tablOthers',
-    'tabl-send':      'tablSend',
+    'tab-weather':   'tabWeather',
+    'tab-farmers':   'tabFarmers',
+    'tab-others':    'tabOthers',
+    'tab-send':      'tabSend',
     'sl-rain':        'slRain',
     'sl-wind':        'slWind',
     'sl-humid':       'slHumid',

@@ -510,3 +510,53 @@ body {
   .stat-row { grid-template-columns: repeat(3, 1fr); }
   .big-temp { font-size: 34px; }
 }
+/* ===== REGISTRATION SECTION ===== */
+.reg-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0fdf4;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #d1fae5;
+}
+
+.reg-stats-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.reg-stats-text {
+  font-size: 13px;
+  color: #166534;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.reg-benefits {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.benefit-item {
+  font-size: 13px;
+  color: #374151;
+  padding: 6px 0;
+  border-bottom: 1px solid #f3f4f6;
+  line-height: 1.5;
+}
+
+.benefit-item:last-child {
+  border-bottom: none;
+}
+
+.reg-note {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #9ca3af;
+}

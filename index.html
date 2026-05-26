@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ogbomoso Weather Alert</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- PWA: makes it installable on Android & iOS -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#1a6b3c" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="OgbomosoWeather" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
 </head>
 <body>
 
@@ -24,22 +34,20 @@
     <!-- TABS -->
     <div class="tabs">
       <button class="tab-btn active" onclick="showTab('weather', this)" id="tab-btn-weather">
-        🌤️ <span id="tab-weather">Weather</span>
+        🌤️ <span id="tabl-weather">Weather</span>
       </button>
       <button class="tab-btn" onclick="showTab('farmers', this)" id="tab-btn-farmers">
-        🌾 <span id="tab-farmers">Farmers</span>
+        🌾 <span id="tabl-farmers">Farmers</span>
       </button>
       <button class="tab-btn" onclick="showTab('others', this)" id="tab-btn-others">
-        🛒 <span id="tab-others">Traders & Riders</span>
+        🛒 <span id="tabl-others">Traders & Riders</span>
       </button>
       <button class="tab-btn" onclick="showTab('send', this)" id="tab-btn-send">
-        📲 <span id="tab-send">Send Alert</span>
+        📲 <span id="tabl-send">Send Alert</span>
       </button>
-      <button class="tab-btn" 
-          onclick="showTab('register', this)"
-          id="tab-btn-register">
-          👤 <span id="tab-register">Register</span>
-        </button>
+      <button class="tab-btn" onclick="showTab('register', this)" id="tab-btn-register">
+        👤 <span id="tabl-register">Register</span>
+      </button>
     </div>
 
     <!-- =================== TAB 1: WEATHER =================== -->
@@ -290,54 +298,53 @@
       </div>
     </div>
 
-    <!-- =================== TAB 5: REGISTRATION =================== -->
+    <!-- =================== TAB 5: REGISTER =================== -->
     <div id="tab-register" class="tab-page hidden">
 
-      <div class="section-title">Join Alert Community</div>
-      <p class="section-sub">
-        Register to receive daily weather alerts
-      </p>
+      <div class="section-title" id="reg-title">Join Alert Community</div>
+      <p class="section-sub" id="reg-sub">Register to receive daily weather alerts</p>
 
       <div class="send-card">
 
-        <!-- Show total registered users -->
+        <!-- Stats banner -->
         <div class="reg-stats">
           <div class="reg-stats-icon">👥</div>
-          <div class="reg-stats-text">
+          <div class="reg-stats-text" id="reg-stats-text">
             Join farmers, traders and riders already
             registered across Ogbomoso land
           </div>
         </div>
 
-        <!-- What they get -->
+        <!-- Benefits list -->
         <div class="reg-benefits">
-          <div class="benefit-item">
+          <div class="benefit-item" id="ben1">
             ✅ Daily weather alerts every morning
           </div>
-          <div class="benefit-item">
+          <div class="benefit-item" id="ben2">
             ✅ Crop-specific advice for your LGA
           </div>
-          <div class="benefit-item">
+          <div class="benefit-item" id="ben3">
             ✅ Alerts in English and Yorùbá
           </div>
-          <div class="benefit-item">
+          <div class="benefit-item" id="ben4">
             ✅ Completely free — no cost ever
           </div>
         </div>
 
-        <!-- Register button -->
-        <a 
+        <!-- Register button — REPLACE the href link after creating your Google Form -->
+        <a
           id="reg-link"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScHbrcxIAY8tsu4hoq3LoIHdIohWrZYmudLSZRo8h8uO3clig/viewform?usp=header"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfGeJRPK6CHNZsBTLBX5trwsc4LUPYAcbIYLKZ32vIz9Isasw/viewform?usp=header"
           target="_blank"
+          rel="noopener noreferrer"
           class="btn btn-whatsapp"
           style="display:block;text-align:center;
-                 text-decoration:none;padding:12px;">
-          👤 Register for Free Alerts
+                 text-decoration:none;padding:12px;
+                 margin-top:4px;">
+          👤 <span id="reg-btn-text">Register for Free Alerts</span>
         </a>
 
-        <div style="text-align:center;margin-top:10px;
-                    font-size:12px;color:#9ca3af;">
+        <div class="reg-note" id="reg-note">
           Takes less than 1 minute to register
         </div>
 
@@ -347,5 +354,17 @@
   </div><!-- end .app -->
 
   <script src="script.js"></script>
+
+  <!-- Register Service Worker for PWA / offline support -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(reg => console.log('Service Worker registered:', reg.scope))
+          .catch(err => console.log('Service Worker failed:', err));
+      });
+    }
+  </script>
+
 </body>
 </html>

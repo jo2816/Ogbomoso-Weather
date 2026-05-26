@@ -45,9 +45,6 @@
       <button class="tab-btn" onclick="showTab('send', this)" id="tab-btn-send">
         📲 <span id="tabl-send">Send Alert</span>
       </button>
-      <button class="tab-btn" onclick="showTab('register', this)" id="tab-btn-register">
-        👤 <span id="tabl-register">Register</span>
-      </button>
     </div>
 
     <!-- =================== TAB 1: WEATHER =================== -->
@@ -107,6 +104,23 @@
           <div class="badge" id="ov3b">Checking...</div>
         </div>
       </div>
+
+      <!-- REGISTER BANNER -->
+      <div class="reg-banner">
+        <div class="reg-banner-text">
+          <div class="reg-banner-title" id="reg-banner-title">📋 Register for Daily Alerts</div>
+          <div class="reg-banner-sub" id="reg-banner-sub">Get weather alerts sent to your phone every morning — free!</div>
+        </div>
+        <a
+          href="https://forms.gle/XXXXXXXXXX"
+          id="reg-banner-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="reg-banner-btn">
+          Register
+        </a>
+      </div>
+
     </div>
 
     <!-- =================== TAB 2: FARMERS (5 LGAs) =================== -->
@@ -295,59 +309,6 @@
 
       <div class="twilio-note" id="twilio-note">
         WhatsApp opens a pre-filled message in your WhatsApp app. SMS via Twilio requires backend integration.
-      </div>
-    </div>
-
-    <!-- =================== TAB 5: REGISTER =================== -->
-    <div id="tab-register" class="tab-page hidden">
-
-      <div class="section-title" id="reg-title">Join Alert Community</div>
-      <p class="section-sub" id="reg-sub">Register to receive daily weather alerts</p>
-
-      <div class="send-card">
-
-        <!-- Stats banner -->
-        <div class="reg-stats">
-          <div class="reg-stats-icon">👥</div>
-          <div class="reg-stats-text" id="reg-stats-text">
-            Join farmers, traders and riders already
-            registered across Ogbomoso land
-          </div>
-        </div>
-
-        <!-- Benefits list -->
-        <div class="reg-benefits">
-          <div class="benefit-item" id="ben1">
-            ✅ Daily weather alerts every morning
-          </div>
-          <div class="benefit-item" id="ben2">
-            ✅ Crop-specific advice for your LGA
-          </div>
-          <div class="benefit-item" id="ben3">
-            ✅ Alerts in English and Yorùbá
-          </div>
-          <div class="benefit-item" id="ben4">
-            ✅ Completely free — no cost ever
-          </div>
-        </div>
-
-        <!-- Register button — REPLACE the href link after creating your Google Form -->
-        <a
-          id="reg-link"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfGeJRPK6CHNZsBTLBX5trwsc4LUPYAcbIYLKZ32vIz9Isasw/viewform?usp=header"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-whatsapp"
-          style="display:block;text-align:center;
-                 text-decoration:none;padding:12px;
-                 margin-top:4px;">
-          👤 <span id="reg-btn-text">Register for Free Alerts</span>
-        </a>
-
-        <div class="reg-note" id="reg-note">
-          Takes less than 1 minute to register
-        </div>
-
       </div>
     </div>
 
